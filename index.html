@@ -130,7 +130,7 @@
     min-height: 92vh;
     background:
       linear-gradient(90deg, rgba(21,44,74,.96) 0%, rgba(30,58,95,.82) 45%, rgba(30,58,95,.58) 100%),
-      url('images/ChatGPT Image Sep 16, 2026, 04_55_26 PM.png') center / cover no-repeat;
+      url('ChatGPT Image Sep 16, 2026, 04_55_26 PM.png') center / cover no-repeat;
     display: flex; align-items: center;
     position: relative; overflow: hidden;
     padding: 80px 48px;
@@ -615,7 +615,7 @@
 <!-- NAVBAR -->
 <nav>
   <a href="#" class="logo">
-    <img src="images/logo.png" alt="SUNTOUCH PHARMA LLP Logo">
+    <img src="logo.png" alt="SUNTOUCH PHARMA LLP Logo">
 </a>
 
   <ul class="nav-links">
@@ -1291,7 +1291,7 @@
   document.querySelectorAll('.product-card').forEach((card, index) => {
     const image = document.createElement('img');
     image.className = 'product-image';
-    image.src = 'images/' + productImages[index];
+    image.src = '' + productImages[index];
     image.alt = card.querySelector('.product-name').textContent + ' product image';
     card.querySelector('.product-top').prepend(image);
   });
