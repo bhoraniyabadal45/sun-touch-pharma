@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SunTouch Pharma LLP | Because Every Life Deserves The Sun's Touch</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1e3a5f;
+    --navy-deep: #152c4a;
+    --navy-light: #2a4f7c;
+    --orange: #E87722;
+    --orange-light: #f4943a;
+    --white: #ffffff;
+    --off-white: #f7f9fc;
+    --light-bg: #eef3f9;
+    --text-dark: #1a2637;
+    --text-mid: #3d5270;
+    --text-muted: #7890a8;
+    --border: #d0dce8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--white);
+    box-shadow: 0 1px 12px rgba(30,58,95,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+  }
+
+  .logo-wrap {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .logo img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    display: block;
+  }
+
+ .logo-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    max-width: 48px;
+    min-height: 48px;
+    max-height: 48px;
+    flex: 0 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-icon img {
+    width: 48px;
+    height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    display: block;
+}
+
+  .logo-sun { display: none; }
+
+  .logo-text-wrap { line-height: 1; }
+  .logo-text-wrap .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+  }
+  .logo-text-wrap .brand span { color: var(--orange); font-style: italic; }
+  .logo-text-wrap .sub {
+    font-size: 10px; letter-spacing: 3px;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-top: 1px;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--text-mid);
+    font-size: 14px; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+
+  .nav-cta {
+    background: var(--orange); color: var(--white) !important;
+    padding: 10px 22px; border-radius: 6px;
+    font-weight: 600 !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--orange-light) !important; color: var(--white) !important; }
+
+  /* Hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--navy); display: block; transition: .3s; }
+
+  /* ─── HERO ─── */
+  .hero {
+    margin-top: 72px;
+    min-height: 92vh;
+    background:
+      linear-gradient(90deg, rgba(21,44,74,.96) 0%, rgba(30,58,95,.82) 45%, rgba(30,58,95,.58) 100%),
+      url('images/ChatGPT Image Sep 16, 2026, 04_55_26 PM.png') center / cover no-repeat;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 80px 48px;
+  }
+
+  .hero-bg-shape {
+    position: absolute; right: -80px; top: -80px;
+    width: 620px; height: 620px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.06);
+  }
+  .hero-bg-shape:nth-child(2) {
+    right: 60px; top: 60px;
+    width: 460px; height: 460px;
+    border-color: rgba(255,255,255,.04);
+  }
+  .hero-wave {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 90px;
+    background: var(--white);
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+
+  .hero-content { max-width: 620px; position: relative; z-index: 2; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange); background: rgba(232,119,34,.15);
+    border: 1px solid rgba(232,119,34,.3);
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em { color: var(--orange); font-style: italic; }
+
+  .hero p {
+    color: rgba(255,255,255,.72);
+    font-size: 16px;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-sanskrit {
+    font-size: 18px;
+    color: rgba(255,255,255,.5);
+    font-style: italic;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 6px; border: none; cursor: pointer;
+    font-size: 14px; font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.3);
+    cursor: pointer;
+    font-size: 14px; font-weight: 500;
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+  .hero-stats {
+    position: absolute; right: 48px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 20px;
+    z-index: 2;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 12px;
+    padding: 20px 28px;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px; font-weight: 700;
+    color: var(--orange);
+    display: block;
+  }
+  .stat-card .label {
+    font-size: 12px; color: rgba(255,255,255,.65);
+    margin-top: 4px;
+  }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 96px 48px; }
+
+  .section-tag {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--orange); font-weight: 600;
+    margin-bottom: 12px; display: block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 700; color: var(--navy-deep);
+    line-height: 1.2; margin-bottom: 16px;
+  }
+
+  .section-sub {
+    color: var(--text-mid); font-size: 15px;
+    max-width: 540px; margin-bottom: 48px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about { background: var(--off-white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 72px; align-items: center;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-block {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: 16px;
+    padding: 48px 40px;
+    color: var(--white);
+    position: relative; overflow: hidden;
+  }
+
+  .about-img-block::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.06);
+  }
+
+  .about-img-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; margin-bottom: 16px;
+  }
+
+  .about-img-block p { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.8; }
+
+  .about-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--orange);
+    border-radius: 12px; padding: 20px 24px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(232,119,34,.35);
+  }
+  .about-badge .big { font-size: 28px; font-weight: 700; color: var(--white); display: block; }
+  .about-badge .sm { font-size: 11px; color: rgba(255,255,255,.85); }
+
+  .mission-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+  .mission-list li {
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .mission-list .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0; margin-top: 7px;
+  }
+  .mission-list span { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ─── PRODUCTS ─── */
+  .products { background: var(--white); }
+  .products-header { max-width: 1200px; margin: 0 auto 48px; }
+
+  .category-tabs {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
+    max-width: 1200px; margin-left: auto; margin-right: auto;
+  }
+
+  .tab-btn {
+    padding: 8px 18px; border-radius: 20px; border: 1px solid var(--border);
+    background: var(--white); color: var(--text-mid);
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    transition: all .2s;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--navy); color: var(--white); border-color: var(--navy);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .product-card {
+    border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden;
+    background: var(--white);
+    transition: box-shadow .2s, transform .2s;
+    display: none;
+  }
+  .product-card.visible { display: block; }
+  .product-card:hover {
+    box-shadow: 0 8px 32px rgba(30,58,95,.1);
+    transform: translateY(-3px);
+  }
+
+  .product-top {
+    padding: 28px 24px 20px;
+    background: var(--light-bg);
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: var(--white);
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+
+  .product-badge {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; font-weight: 700;
+    color: var(--navy-deep); margin-bottom: 4px;
+  }
+
+  .product-form {
+    font-size: 11px; color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .product-bottom { padding: 20px 24px; }
+
+  .product-composition {
+    font-size: 13px; color: var(--text-mid);
+    line-height: 1.6; margin-bottom: 14px;
+  }
+
+  .product-pack {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 11px; font-weight: 600;
+    padding: 5px 12px; border-radius: 4px;
+  }
+
+  /* Category color themes */
+  .cat-analgesic .product-badge { background: rgba(232,119,34,.12); color: var(--orange); }
+  .cat-antibiotic .product-badge { background: rgba(30,58,95,.1); color: var(--navy); }
+  .cat-cold .product-badge { background: rgba(34,139,140,.12); color: #228b8c; }
+  .cat-gastro .product-badge { background: rgba(120,60,140,.12); color: #783c8c; }
+  .cat-antifungal .product-badge { background: rgba(180,60,80,.12); color: #b43c50; }
+  .cat-respiratory .product-badge { background: rgba(30,100,180,.12); color: #1e64b4; }
+
+  /* ─── WHY US ─── */
+  .why { background: var(--navy-deep); padding: 96px 48px; }
+  .why .section-title { color: var(--white); }
+  .why .section-tag { color: var(--orange); }
+  .why .section-sub { color: rgba(255,255,255,.65); }
+
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .why-card {
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px; padding: 32px 28px;
+    transition: border-color .2s, background .2s;
+  }
+  .why-card:hover {
+    border-color: var(--orange);
+    background: rgba(255,255,255,.04);
+  }
+
+  .why-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: rgba(232,119,34,.15);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .why-card h4 {
+    font-size: 16px; font-weight: 600;
+    color: var(--white); margin-bottom: 10px;
+  }
+
+  .why-card p { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.7; }
+
+  /* ─── VISION MISSION ─── */
+  .vismis { background: var(--off-white); }
+  .vismis-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 40px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .vismis-block {
+    background: var(--white);
+    border-radius: 16px; padding: 40px 36px;
+    border-top: 4px solid var(--navy);
+    box-shadow: 0 2px 16px rgba(30,58,95,.06);
+  }
+
+  .vismis-block.orange-top { border-top-color: var(--orange); }
+
+  .vismis-block h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; color: var(--navy-deep); margin-bottom: 16px;
+  }
+
+  .vismis-block p { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+  /* ─── CONTACT ─── */
+  .contact { background: var(--white); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; max-width: 1200px; margin: 0 auto;
+    align-items: start;
+  }
+
+  .contact-info { display: flex; flex-direction: column; gap: 28px; }
+
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+
+  .contact-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: var(--light-bg);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+
+  .contact-item h5 { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .contact-item p { font-size: 14px; color: var(--text-dark); font-weight: 500; line-height: 1.55; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 12px; color: var(--text-mid); font-weight: 500; }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    transition: border-color .2s;
+    outline: none;
+    resize: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--navy);
+  }
+
+  .form-group textarea { height: 110px; }
+
+  .form-submit {
+    background: var(--orange); color: var(--white);
+    padding: 13px 28px; border-radius: 8px; border: none;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: background .2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { background: var(--orange-light); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy-deep);
+    padding: 64px 48px 32px;
+  }
+
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+
+  .footer-brand p {
+    font-size: 13px; color: rgba(255,255,255,.5);
+    margin-top: 16px; max-width: 280px; line-height: 1.75;
+  }
+
+  .footer-col h5 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+    color: rgba(255,255,255,.5); margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col ul li a {
+    text-decoration: none; color: rgba(255,255,255,.7);
+    font-size: 13px; transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--orange); }
+
+  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin-bottom: 24px; }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(255,255,255,.4);
+  }
+
+  .footer-bottom a { color: var(--orange); text-decoration: none; }
+
+  /* ─── TOAST ─── */
+  .toast {
+    position: fixed; bottom: 32px; right: 32px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 24px; border-radius: 8px;
+    font-size: 14px; font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    transform: translateY(100px); opacity: 0;
+    transition: all .3s;
+    z-index: 999;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    section { padding: 64px 24px; }
+    .hero { padding: 60px 24px; flex-direction: column; }
+    .hero-stats { position: static; flex-direction: row; flex-wrap: wrap; transform: none; margin-top: 40px; }
+    .stat-card { flex: 1; min-width: 130px; }
+
+    .about-grid, .vismis-grid, .contact-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .about-badge { position: static; margin-top: 16px; display: inline-block; }
+  }
+
+  @media (max-width: 600px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo">
+    <img src="images/logo.png" alt="SUNTOUCH PHARMA LLP Logo">
+</a>
+
+  <ul class="nav-links">
+    <li><a href="#home" class="home-link" aria-label="Home" title="Home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-shape"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">॥ सर्वे सन्तु निरामयाः ॥ — May All Be Free From Illness</div>
+    <h1>Because Every Life<br>Deserves The<br><em>Sun's Touch</em></h1>
+    <p>A quality-focused pharmaceutical company dedicated to delivering reliable, effective, and patient-centric healthcare solutions across India.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">View Our Products</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-card">
+      <span class="num">25+</span>
+      <div class="label">Products</div>
+    </div>
+    <div class="stat-card">
+      <span class="num">PAN</span>
+      <div class="label">India Presence</div>
+    </div>
+    <div class="stat-card">
+      <span class="num">GMP</span>
+      <div class="label">Quality Standards</div>
+    </div>
+  </div>
+
+  <div class="hero-wave"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-img-block">
+        <h3>Guided by Science,<br>Driven by Compassion</h3>
+        <p>SUNTOUCH is a quality-focused pharmaceutical company dedicated to delivering reliable, effective, and patient-centric healthcare solutions. Guided by science, integrity, and compassion, we strive to touch lives positively by providing medicines that promote better health and a brighter tomorrow.</p>
+        <br/>
+        <p style="color:rgba(255,255,255,.5); font-size:12px; margin-top: 8px;">222, Marvel Plaza, Kamrej Char Rasta,<br>Surat – 394185, Gujarat, INDIA</p>
+      </div>
+      <div class="about-badge">
+        <span class="big">LLP</span>
+        <div class="sm">Trusted Partner</div>
+      </div>
+    </div>
+
+    <div>
+      <span class="section-tag">About Us</span>
+      <h2 class="section-title">Our Mission</h2>
+      <p class="section-sub">To become one of India's most trusted pharmaceutical companies by setting new benchmarks in medical excellence.</p>
+
+      <ul class="mission-list">
+        <li>
+          <div class="dot"></div>
+          <span>Develop and deliver safe, effective, and scientifically proven pharmaceutical products that meet global quality standards.</span>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <span>Continuously innovate through research, technology, and quality-driven processes.</span>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <span>Build long-term trust with healthcare professionals, patients, and partners through ethical practices and transparency.</span>
+        </li>
+        <li>
+          <div class="dot"></div>
+          <span>Expand our presence across India while contributing meaningfully to a healthier nation.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-header">
+    <span class="section-tag">Our Portfolio</span>
+    <h2 class="section-title">Product Range</h2>
+    <p class="section-sub">A comprehensive range of pharmaceutical formulations covering pain management, infections, respiratory, gastrointestinal, and more.</p>
+  </div>
+
+  <div class="category-tabs">
+    <button class="tab-btn active" onclick="filterProducts('all', this)">All Products</button>
+    <button class="tab-btn" onclick="filterProducts('analgesic', this)">Analgesic & Pain</button>
+    <button class="tab-btn" onclick="filterProducts('antibiotic', this)">Antibiotics</button>
+    <button class="tab-btn" onclick="filterProducts('cold', this)">Cold & Allergy</button>
+    <button class="tab-btn" onclick="filterProducts('gastro', this)">Gastro</button>
+    <button class="tab-btn" onclick="filterProducts('antifungal', this)">Anti-Fungal</button>
+    <button class="tab-btn" onclick="filterProducts('respiratory', this)">Respiratory</button>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- Analgesic -->
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Analgesic</span>
+        <div class="product-name">NIMTOUCH-P</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Nimesulide BP 100 mg + Paracetamol IP 325 mg</div>
+        <span class="product-pack">10 × 2 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Analgesic</span>
+        <div class="product-name">ACITOUCH-P</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Aceclofenac IP 100 mg + Paracetamol IP 325 mg</div>
+        <span class="product-pack">20 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Analgesic</span>
+        <div class="product-name">ACITOUCH P-Alu</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Aceclofenac IP 100 mg + Paracetamol IP 325 mg</div>
+        <span class="product-pack">10 × 20 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Analgesic</span>
+        <div class="product-name">ACITOUCH-SP</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Aceclofenac IP 100 mg + Paracetamol IP 325 mg + Serratiopeptidase IP 15 mg</div>
+        <span class="product-pack">10 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Topical Gel</span>
+        <div class="product-name">DECLOTOUCH GEL</div>
+        <div class="product-form">Gel</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Diclofenac Diethylamine 1.16% + Linseed Oil 3% + Methyl Salicylate 10% + Menthol 5% + Benzyl Alcohol 1%</div>
+        <span class="product-pack">30 gm</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-analgesic visible" data-cat="analgesic">
+      <div class="product-top">
+        <span class="product-badge">Topical Gel</span>
+        <div class="product-name">DECLOTOUCH PLUS</div>
+        <div class="product-form">Gel</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Diclofenac Diethylamine 2.32% + Menthol 5% + Methyl Salicylate 10%</div>
+        <span class="product-pack">30 gm</span>
+      </div>
+    </div>
+
+    <!-- Antibiotics -->
+    <div class="product-card cat-antibiotic visible" data-cat="antibiotic">
+      <div class="product-top">
+        <span class="product-badge">Antibiotic</span>
+        <div class="product-name">AMOTOUCH 625</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Amoxycillin 500 mg + Potassium Clavulanate 125 mg</div>
+        <span class="product-pack">10 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antibiotic visible" data-cat="antibiotic">
+      <div class="product-top">
+        <span class="product-badge">Antibiotic</span>
+        <div class="product-name">AZOTOUCH 250</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Azithromycin IP 250 mg</div>
+        <span class="product-pack">6 × 1 × 24 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antibiotic visible" data-cat="antibiotic">
+      <div class="product-top">
+        <span class="product-badge">Antibiotic</span>
+        <div class="product-name">AZOTOUCH 500</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Azithromycin IP 500 mg</div>
+        <span class="product-pack">3 × 1 × 20 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antibiotic visible" data-cat="antibiotic">
+      <div class="product-top">
+        <span class="product-badge">Anti-Bacterial</span>
+        <div class="product-name">OFLOTOUCH OZ</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Ofloxacin IP 200 mg + Ornidazole IP 500 mg</div>
+        <span class="product-pack">20 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <!-- Cold & Allergy -->
+    <div class="product-card cat-cold visible" data-cat="cold">
+      <div class="product-top">
+        <span class="product-badge">Cold & Allergy</span>
+        <div class="product-name">SOLVITOUCH COLD</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Phenylephrine HCl 10 mg + Paracetamol 500 mg + Chlorpheniramine Maleate 4 mg</div>
+        <span class="product-pack">20 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-cold visible" data-cat="cold">
+      <div class="product-top">
+        <span class="product-badge">Anti-Allergic</span>
+        <div class="product-name">LEVOTOUCH-M</div>
+        <div class="product-form">Tablets</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Montelukast 10 mg + Levocetirizine Dihydrochloride 5 mg</div>
+        <span class="product-pack">30 × 10 Tablets</span>
+      </div>
+    </div>
+
+    <!-- Respiratory -->
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH DX</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Dextromethorphan HBr 10 mg + Chlorpheniramine Maleate 2 mg + Phenylephrine HCl 5 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH-PLUS</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Dextromethorphan HBr 15 mg + Phenylephrine HCl 5 mg + Chlorpheniramine Maleate 2 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH 6X</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Dextromethorphan Hbr 15 mg + Ambroxol HCl 15 mg + Phenylephrine HCl 10 mg + Guaiphenesin 100 mg + Sodium Citrate 75 mg + Cetirizine 5 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH-BR</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Terbutaline Sulphate 1.25 mg + Bromhexine HCl 4 mg + Guaiphenesin 50 mg + Menthol 2.5 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH-AT</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Terbutaline Sulphate 1.25 mg + Ambroxol HCl 15 mg + Guaiphenesin 50 mg + Menthol 1.5 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-respiratory visible" data-cat="respiratory">
+      <div class="product-top">
+        <span class="product-badge">Respiratory</span>
+        <div class="product-name">SOLVITOUCH-LS</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Levosalbutamol 0.5 mg + Ambroxol HCl 15 mg + Guaphenesin 50 mg</div>
+        <span class="product-pack">100 ML</span>
+      </div>
+    </div>
+
+    <!-- Gastro -->
+    <div class="product-card cat-gastro visible" data-cat="gastro">
+      <div class="product-top">
+        <span class="product-badge">Gastro</span>
+        <div class="product-name">RBTOUCH-DSR</div>
+        <div class="product-form">Capsules</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Rabeprazole Sodium IP 20 mg + Domperidone IP 30 mg</div>
+        <span class="product-pack">10 × 10 Capsules</span>
+      </div>
+    </div>
+
+    <!-- Vitamins -->
+    <div class="product-card cat-cold visible" data-cat="cold">
+      <div class="product-top">
+        <span class="product-badge">Nutrition</span>
+        <div class="product-name">MULTITOUCH</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Multivitamin, Multimineral Syrup</div>
+        <span class="product-pack">200 ML</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-cold visible" data-cat="cold">
+      <div class="product-top">
+        <span class="product-badge">Nutrition</span>
+        <div class="product-name">CYPROTOUCH</div>
+        <div class="product-form">Syrup</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Cyproheptadine HCl 2.0 mg + Tricholine Citrate 275 mg</div>
+        <span class="product-pack">200 ML</span>
+      </div>
+    </div>
+
+    <!-- Antifungal -->
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Anti-Fungal</span>
+        <div class="product-name">ITRATOUCH 200</div>
+        <div class="product-form">Capsules</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Itraconazole BP 200 mg</div>
+        <span class="product-pack">10 × 10 Capsules</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Anti-Fungal Cream</span>
+        <div class="product-name">LLTOUCH CREAM</div>
+        <div class="product-form">Cream</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Luliconazole 1% + Benzyl Alcohol IP 1%</div>
+        <span class="product-pack">30 gm</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Anti-Fungal Cream</span>
+        <div class="product-name">ITRATOUCH OC</div>
+        <div class="product-form">Cream</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Itraconazole 1% + Ofloxacin 0.75% + Ornidazole 2% + Clobetasol Propionate 0.05%</div>
+        <span class="product-pack">15 gm</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Derma Cream</span>
+        <div class="product-name">CLOTOUCH GM</div>
+        <div class="product-form">Cream</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Clobetasol Propionate 0.05% + Neomycin Sulphate 0.5% + Miconazole Nitrate 2% + Chlorocresol 0.1%</div>
+        <span class="product-pack">30 gm</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Derma Cream</span>
+        <div class="product-name">TOUCHDERM K6</div>
+        <div class="product-form">Cream</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Ketoconazole 20 + Iodochlorhydroxyquinoline 10 + Tolnaftate 10 + Neomycin Sulphate + Clobetasol Propionate 0.05 + Dexpanthenol 0.5</div>
+        <span class="product-pack">15 gm</span>
+      </div>
+    </div>
+
+    <div class="product-card cat-antifungal visible" data-cat="antifungal">
+      <div class="product-top">
+        <span class="product-badge">Derma Cream</span>
+        <div class="product-name">BECLOTOUCH N</div>
+        <div class="product-form">Cream</div>
+      </div>
+      <div class="product-bottom">
+        <div class="product-composition">Beclometasone Dipropionate 0.025% + Neomycin 0.5% + Clotrimazole 1.0% + Chlorocresol 0.1%</div>
+        <span class="product-pack">20 gm</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why" id="why">
+  <div style="max-width:1200px; margin:0 auto;">
+    <span class="section-tag">Why SunTouch</span>
+    <h2 class="section-title">What Sets Us Apart</h2>
+    <p class="section-sub" style="margin-bottom:48px;">We are here to meet your medical needs with quality at the core of everything we do.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🧪</div>
+        <h4>Global Quality Standards</h4>
+        <p>Every product is developed and tested to meet stringent pharmaceutical quality standards, ensuring safety and efficacy at every batch.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔬</div>
+        <h4>Science-Driven Innovation</h4>
+        <p>Continuously innovating through research and technology to bring effective formulations that address real healthcare needs.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h4>Ethical Practices</h4>
+        <p>Built on integrity and transparency, our relationships with healthcare professionals, patients, and partners are founded on trust.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💊</div>
+        <h4>Wide Product Portfolio</h4>
+        <p>From analgesics to antifungals, antibiotics to respiratory formulations — a broad range covering key therapeutic areas.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <h4>PAN India Presence</h4>
+        <p>Expanding our distribution network across India to make quality healthcare accessible to every corner of the country.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">❤️</div>
+        <h4>Patient-Centric Approach</h4>
+        <p>Every decision we make is guided by one question: how does this improve the life of the patient? Compassion is our compass.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vismis" id="vision">
+  <div style="max-width:1200px; margin:0 auto;">
+    <span class="section-tag">Our Direction</span>
+    <h2 class="section-title">Vision & Mission</h2>
+    <p class="section-sub">The values that guide every product we make and every partnership we build.</p>
+
+    <div class="vismis-grid">
+      <div class="vismis-block">
+        <h3>Our Vision</h3>
+        <p>To become one of India's most trusted and admired pharmaceutical companies by delivering innovative, high-quality, and affordable healthcare solutions that enhance lives and set new benchmarks in medical excellence.</p>
+      </div>
+      <div class="vismis-block orange-top">
+        <h3>Our Mission</h3>
+        <p>To develop and deliver safe, effective, and scientifically proven pharmaceutical products — continuously innovating through research, building long-term trust through transparency, and expanding our presence while contributing meaningfully to a healthier nation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <span class="section-tag">Reach Out</span>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub">For product inquiries, partnerships, or distributor queries — we're ready to assist.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h5>Phone</h5>
+            <p>+91 81414 77749</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h5>Email</h5>
+            <p>Info@suntouchpharma.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h5>Address</h5>
+            <p>222, Marvel Plaza, Kamrej Char Rasta,<br>Surat – 394185, Gujarat, INDIA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Dr. / Mr. / Ms." />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Inquiry Type</label>
+          <select>
+            <option>Product Inquiry</option>
+            <option>Distributor / Franchise</option>
+            <option>Bulk Order</option>
+            <option>General Query</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us what you need…"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">Send Inquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="logo-icon" style="width:40px;height:40px;"></div>
+        <div class="logo-text-wrap">
+          <div class="brand" style="color:white;">SUN<span style="color:var(--orange);">Touch</span></div>
+          <div class="sub">Pharma LLP</div>
+        </div>
+      </div>
+      <p>A quality-focused pharmaceutical company dedicated to delivering reliable, effective, and patient-centric healthcare solutions. <em>Because every life deserves the Sun's Touch.</em></p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Our Products</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#vision">Vision & Mission</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+918141477749">+91 81414 77749</a></li>
+        <li><a href="mailto:Info@suntouchpharma.com">Info@suntouchpharma.com</a></li>
+        <li><a href="#">222, Marvel Plaza, Kamrej Char Rasta, Surat – 394185, Gujarat</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="footer-bottom">
+    <span>© 2026 SunTouch Pharma LLP. All rights reserved.</span>
+    <span>॥ सर्वे सन्तु निरामयाः ॥</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✅ Inquiry sent! We'll get back to you shortly.</div>
+
+<script>
+  // Product filter
+  function filterProducts(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.classList.add('visible');
+      } else {
+        card.classList.remove('visible');
+      }
+    });
+  }
+
+  // Form submit
+  function submitForm() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  const productImages = [
+    'NIMTOUCH-P.png',
+    'ACITOUCH-P.png',
+    'ACITOUCH P-Alu.png',
+    'ACITOUCH-SP.png',
+    'DECLOTOUCH GEL.png',
+    'DECLOTOUCH PLUS.png',
+    'AMOTOUCH 625.png',
+    'AZOTOUCH 250.png',
+    'AZOTOUCH 500.png',
+    'OFLOTOUCH OZ.png',
+    'SOLVITOUCH COLD.png',
+    'LEVOTOUCH-M.png',
+    'SOLVITOUCH DX.png',
+    'SOLVITOUCH-PLUS.png',
+    'SOLVITOUCH 6X.png',
+    'SOLVITOUCH-BR.png',
+    'SOLVITOUCH-AT.png',
+    'SOLVITOUCH-LS.png',
+    'RBTOUCH-DSR.png',
+    'MULTITOUCH.png',
+    'CYPROTOUCH.png',
+    'ITRATOUCH 200.png',
+    'LLTOUCH CREAM.png',
+    'ITRATOUCH OC.png',
+    'CLOTOUCH GM.png',
+    'TOUCHDERM K6.png',
+    'BECLOTOUCH N.png'
+  ];
+
+  document.querySelectorAll('.product-card').forEach((card, index) => {
+    const image = document.createElement('img');
+    image.className = 'product-image';
+    image.src = 'images/' + productImages[index];
+    image.alt = card.querySelector('.product-name').textContent + ' product image';
+    card.querySelector('.product-top').prepend(image);
+  });
+
+  // Mobile nav toggle
+  let menuOpen = false;
+  function toggleMenu() {
+    menuOpen = !menuOpen;
+    const links = document.querySelector('.nav-links');
+    if (menuOpen) {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '72px';
+      links.style.left = '0'; links.style.right = '0';
+      links.style.background = 'white';
+      links.style.padding = '20px 24px 24px';
+      links.style.boxShadow = '0 8px 24px rgba(0,0,0,.1)';
+      links.style.gap = '20px';
+    } else {
+      links.style.display = 'none';
+    }
+  }
+
+  // Scroll highlight nav
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = '';
+      if (a.getAttribute('href') === '#' + current) {
+        a.style.color = 'var(--orange)';
+      }
+    });
+  });
+</script>
+</body>
+</html>
